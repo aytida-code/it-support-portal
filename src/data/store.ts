@@ -105,8 +105,7 @@ function localCreateInteractionLog(input: InteractionLogInput): InteractionLog {
   return log
 }
 
-// TODO(USE_MOCK): verify path + response shape against the real backend's OpenAPI schema before flipping this to false.
-export const USE_MOCK_TICKETS = true
+export const USE_MOCK_TICKETS = false
 
 export async function getTickets(): Promise<Ticket[]> {
   if (USE_MOCK_TICKETS) return localGetTickets()
@@ -138,8 +137,7 @@ export async function deleteTicket(id: string): Promise<boolean> {
   return true
 }
 
-// TODO(USE_MOCK): verify path + response shape against the real backend's OpenAPI schema before flipping this to false.
-export const USE_MOCK_LOGS = true
+export const USE_MOCK_LOGS = false
 
 export async function getInteractionLogs(): Promise<InteractionLog[]> {
   if (USE_MOCK_LOGS) return localGetInteractionLogs()
